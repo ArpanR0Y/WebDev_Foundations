@@ -47,7 +47,8 @@ function gameRules(moveOne, moveTwo) {
 function disableButtons() {
   const buttons = document.querySelectorAll('.button');
   buttons.forEach(button => {
-    button.disabled = true
+    button.classList.add("disabled");
+    button.disabled = true;
   })
 }
 
@@ -58,7 +59,7 @@ function game(event) {
 
   let roundResult = playRound(playerSelection, computerSelection);
 
-  const container = document.querySelector("#container-game");
+  const output = document.querySelector("#output");
   const displayResult = document.createElement("div");
   const displayScore = document.createElement("div");
   const displayFinalResult = document.createElement("div");
@@ -75,25 +76,23 @@ function game(event) {
     displayResult.textContent = roundResult;
     displayScore.textContent = "Player: " + player + " Computer: " + computer;
   }
-  if (container.hasChildNodes()) {
-    container.replaceChild(displayResult, container.childNodes[0]);
-    container.replaceChild(displayScore, container.childNodes[1]);
+  if (output.hasChildNodes()) {
+    output.replaceChild(displayResult, output.childNodes[0]);
+    output.replaceChild(displayScore, output.childNodes[1]);
   } else {
-    container.appendChild(displayResult);
-    container.appendChild(displayScore);
+    output.appendChild(displayResult);
+    output.appendChild(displayScore);
   }
 
   
   if (player == 5) {
     displayFinalResult.textContent = "Player won the game!!";
-    container.appendChild(displayFinalResult);
+    output.appendChild(displayFinalResult);
     disableButtons();
-    document.getElementById('reload').removeAttribute("hidden");
   } else if (computer == 5) {
     displayFinalResult.textContent = "Computer won the game!!";
-    container.appendChild(displayFinalResult);
+    output.appendChild(displayFinalResult);
     disableButtons();
-    document.getElementById('reload').removeAttribute("hidden");
   }
 
 }
