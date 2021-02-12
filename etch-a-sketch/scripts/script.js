@@ -1,6 +1,4 @@
-const gridSize = prompt("Grid Size: ");
-
-function createItem() {
+function createGrid() {
   const container = document.querySelector(".container");
   
   for (let i = 0; i < gridSize*gridSize; i++) {
@@ -17,5 +15,26 @@ function createItem() {
   container.style.gridTemplateColumns = gridItemSize;
 }
 
+function changeColor(e) {
+    e.target.classList.add("highlighted");
+}
 
-createItem();
+function clearGrid() {
+    const items = document.querySelectorAll(".item")
+    items.forEach(item => {
+        console.log(item.classList.remove("highlighted"));
+    });
+}
+
+
+//Main
+const gridSize = prompt("Grid Size: ");
+createGrid();
+
+const items = document.querySelectorAll(".item");
+items.forEach(item => {
+    item.addEventListener('mouseover', changeColor);
+});
+
+const clear = document.querySelector(".clear");
+clear.addEventListener('click', clearGrid);
