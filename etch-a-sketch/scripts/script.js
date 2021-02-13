@@ -6,13 +6,8 @@ function createGrid() {
     item.classList.add("item");
     container.appendChild(item);
   }
-
-  let gridItemSize = "";
-  for (let i = 0; i < gridSize; i++) {
-    gridItemSize = gridItemSize.concat("50px ");
-  }
-  
-  container.style.gridTemplateColumns = gridItemSize;
+    
+  container.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
 }
 
 function changeColor(e) {
