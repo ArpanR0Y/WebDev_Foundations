@@ -1,4 +1,35 @@
-function createGrid() {
+//Main
+const slider = document.querySelector(".slider");
+const value = document.querySelector("#value");
+const displayValue = document.createElement('div');
+
+//Render the default grid
+const defaultGridSize = slider.value;
+createGrid(defaultGridSize);
+draw();
+
+//Display the default grid value
+displayValue.textContent = "Value: " + slider.value;
+value.appendChild(displayValue);
+
+//Render the resized grid and updated grid value
+slider.addEventListener('input', function() {
+  clearGrid();
+  createGrid(this.value);
+  displayValue.textContent = "Value: " + this.value;
+  value.replaceChild(displayValue, value.childNodes[0]);
+  draw();
+});
+
+
+//clear the grid
+const clear = document.querySelector(".clear");
+clear.addEventListener('click', clearGridSketch);
+
+/*-------------------------------------------*/
+
+//Functions
+function createGrid(gridSize) {
   const container = document.querySelector(".container");
   
   for (let i = 0; i < gridSize*gridSize; i++) {
@@ -10,26 +41,25 @@ function createGrid() {
   container.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
 }
 
-function changeColor(e) {
-    e.target.classList.add("highlighted");
+function draw() {
+  const items = document.querySelectorAll(".item");
+  items.forEach(item => {
+    item.addEventListener('mouseover', function(e) {
+      e.target.classList.add("ink");
+    });
+  });
 }
 
-function clearGrid() {
+function clearGridSketch() {
     const items = document.querySelectorAll(".item")
-    items.forEach(item => {
-        console.log(item.classList.remove("highlighted"));
+    items.forEach(function(item) {
+        item.classList.remove("ink");
     });
 }
 
-
-//Main
-const gridSize = prompt("Grid Size: ");
-createGrid();
-
-const items = document.querySelectorAll(".item");
-items.forEach(item => {
-    item.addEventListener('mouseover', changeColor);
-});
-
-const clear = document.querySelector(".clear");
-clear.addEventListener('click', clearGrid);
+function clearGrid() {
+  const items = document.querySelectorAll(".item");
+  items.forEach(function(item) {
+    item.remove();
+  });
+}

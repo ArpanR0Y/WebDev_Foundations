@@ -16,8 +16,8 @@
     border: 1px solid black;
 }
 
-.highlighted {
-    background-color: #ffc600;
+.ink {
+    background-color: black;
 }
 
 .button {
