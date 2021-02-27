@@ -4,12 +4,31 @@
   font-family: 'Ubuntu', sans-serif;
 }
 
-.container {
+.container-heading {
+  display: flex;
+  justify-content: center;
+}
+
+.container-slider {
+  display: flex;
+  justify-content: center;
+}
+
+.container-button {
+  display: flex;
+  justify-content: center;
+}
+
+.container-grid {
+  display: flex;
+  justify-content: center;
+}
+
+.grid {
     display: grid;
     padding: 4px;
-    width: 500px;
-    height: 500px;
-    margin: 10px auto;
+    width: 450px;
+    height: 450px;
 }
 
 .item {
@@ -22,14 +41,14 @@
 
 .button {
     border: none;
-    border-radius: 8px;
+    border-radius: 4px;
     color: white;
-    padding: 16px 32px;
+    padding: 8px 16px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
+    font-size: 14px;
+    margin: 8px 4px;
     transition-duration: 0.4s;
     cursor: pointer;
   }
@@ -42,5 +61,4 @@
   
   .clear:hover {
     background-color: #e7e7e7;
-
   }

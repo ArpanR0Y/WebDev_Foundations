@@ -30,15 +30,15 @@ clear.addEventListener('click', clearGridSketch);
 
 //Functions
 function createGrid(gridSize) {
-  const container = document.querySelector(".container");
+  const grid = document.querySelector(".grid");
   
   for (let i = 0; i < gridSize*gridSize; i++) {
     const item = document.createElement("div");
     item.classList.add("item");
-    container.appendChild(item);
+    grid.appendChild(item);
   }
     
-  container.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+  grid.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
 }
 
 function draw() {
