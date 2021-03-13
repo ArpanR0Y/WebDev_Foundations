@@ -4,25 +4,42 @@
   font-family: 'Ubuntu', sans-serif;
 }
 
-.container-heading {
+.container {
   display: flex;
   justify-content: center;
 }
 
-.container-slider {
-  display: flex;
-  justify-content: center;
+.button {
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 8px 4px;
+  transition-duration: 0.4s;
+  cursor: pointer;
 }
 
-.container-button {
-  display: flex;
-  justify-content: center;
+.clear {
+  background-color: white;
+  color: black;
+  border: 2px solid #e7e7e7;
 }
 
-.container-grid {
-  display: flex;
-  justify-content: center;
+.clear:hover {
+  background-color: #cec8c8;
 }
+
+/* .text {
+  
+}
+
+.sub-text {
+
+} */
 
 .grid {
     display: grid;
@@ -31,7 +48,7 @@
     height: 450px;
 }
 
-.item {
+.grid-cell {
     border: 1px solid black;
 }
 
@@ -39,26 +56,3 @@
     background-color: black;
 }
 
-.button {
-    border: none;
-    border-radius: 4px;
-    color: white;
-    padding: 8px 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    margin: 8px 4px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-  }
-
-  .clear {
-    background-color: white;
-    color: black;
-    border: 2px solid #e7e7e7;
-  }
-  
-  .clear:hover {
-    background-color: #e7e7e7;
-  }
