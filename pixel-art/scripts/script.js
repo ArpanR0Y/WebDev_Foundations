@@ -1,5 +1,5 @@
 //Main
-const slider = document.querySelector("#slider");
+const slider = document.querySelector(".slider");
 const value = document.querySelector("#value");
 const displayValue = document.createElement('div');
 
