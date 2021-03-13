@@ -18,3 +18,9 @@ https://arpanr0y.github.io/javascript-drum-kit/
 *A responsive implementation of the classic rock paper scissors game using HTML, CSS and Vanilla JavaScript*
 
 https://arpanr0y.github.io/rock-paper-scissors/ 
+
+4. Pixel Art
+
+*A responsive tool to create digital art in a desktop browser resembling something between a sketchpad and an Etch-A-Sketch using HTML, CSS and Vanilla JavaScript*
+
+https://arpanr0y.github.io/pixel-art/
